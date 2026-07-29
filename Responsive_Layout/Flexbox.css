@@ -1,0 +1,40 @@
+.container{
+  width: 800px;
+  height: 800px;
+  display: flex;
+  background-color: lightgray;
+  color: white;
+  font-size: 30px;
+  position: relative;
+  align-items: flex-start;
+  border-bottom: 2px solid red;
+  /* flex-direction: column; */
+}
+.item-1{
+  width: 200px;
+  height: 350px;
+  background-color: blue;
+}
+.item-2{
+  width: 200px;
+  height: 300px;
+  background-color: red;
+  position: relative;
+  top:10px;
+  left: 50px;
+    z-index: 2;
+}
+.item-3{
+  width: 200px;
+  height: 250px;
+  background-color: limegreen;
+  position: sticky;
+  top: 50px;
+  left: 30px;
+  z-index: 1;
+}
+.item-4{
+  width: 200px;
+  height: 200px;
+  background-color: blueviolet;
+}
