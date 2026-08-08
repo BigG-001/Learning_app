@@ -6,7 +6,268 @@
   <title>Feature</title>
 </head>
 <body>
+  <style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f6f8fb;
+}
+
+/* Navbar */
+
+.navbar{
+    width:100%;
+    background:#fff;
+    padding:15px 20px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
+}
+
+/* Logo */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo img{
+    width:38px;
+}
+
+.logo span{
+    font-size:20px;
+    font-weight:700;
+    color:#1b2340;
+}
+
+/* Menu Icon */
+
+.menu-btn{
+    width:45px;
+    height:45px;
+    background:#23253b;
+    color:white;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:26px;
+    cursor:pointer;
+
+    transition:.4s;
+}
+
+.menu-btn:hover{
+    background:#0e1326;
+}
+
+/* Dropdown */
+
+.mobile-menu{
+    position:absolute;
+    top:80px;
+    left:0;
+    right:0;
+
+    background: #bac6cd;
+
+    border-radius:18px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+
+    overflow:hidden;
+
+    max-height:0;
+
+    transition:.45s ease;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.mobile-menu.active{
+    max-height:500px;
+}
+
+/* Links */
+
+.mobile-menu a{
+    text-decoration:none;
+    color:#23253b;
+
+    padding:18px 25px;
+
+    font-size:17px;
+
+    transition:.3s;
+}
+
+.mobile-menu a:hover{
+    background:#23253b;
+    color:white;
+    padding-left:35px;
+}
+
+/* Button */
+
+.join-btn{
+    margin:20px;
+
+    padding:15px;
+
+    border:none;
+
+    background:#23253b;
+    color:white;
+
+    border-radius:10px;
+
+    font-size:16px;
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.join-btn:hover{
+    background:#11162a;
+}
+  </style>
   <!--Adding new features-->
-  <button>About Us</button>
+  <header class="navbar">
+    <div class="logo">
+        <img src="images/logo.png" alt="Coil Africa">
+        <span>Coil Africa</span>
+    </div>
+
+    <div class="menu-btn" id="menuBtn">
+        ☰
+    </div>
+
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">How It Works</a>
+        <a href="#">Features</a>
+        <a href="#">FAQs</a>
+        <a href="#">Contact</a>
+
+        <button class="join-btn">
+            Join Waiting List
+        </button>
+    </nav>
+</header>
+  
+
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+
+menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("active");
+
+    if (mobileMenu.classList.contains("active")) {
+        menuBtn.innerHTML = "✕";
+    } else {
+        menuBtn.innerHTML = "☰";
+    }
+});
+
+/*.menu-btn{
+        width: 36px;
+        height: 36px;
+        background: #1a1a2e;
+        border: none;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        padding: 0;
+      }
+      .hamburger{
+        display: block;
+        width: 14px;
+        height: 1.5px;
+        background-color: #ffffff;
+        position: relative;
+      }
+      .hamburger::before,
+      .hamburger::after {
+        content: '';
+        left: 0;
+        position: absolute;
+        width: 14px;
+        height: 1.5px;
+        background: #ffffff;
+        border-radius: 1px;
+      }
+      .hamburger::before{
+        top: -5px;
+      }
+      .hamburger::after{
+        top: 5px;
+      }
+      .nav-links{
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease; 
+      }
+      .nav-links.open{
+        max-height: 320px;
+      }
+      .menu-btn.active .hamburger{
+        background: transparent;
+      }
+      .menu-btn.active .hamburger::before{
+        top: 0;
+        transform: rotate(45deg);
+      }
+      .menu-btn.active .hamburger::after{
+        top: 0;
+        transform: rotate(-45deg);
+      }
+      .nav-link{
+        padding: 14px 0;
+        border-bottom: 1px solid #f0f0f0;
+      }
+      .nav-link:last-child {
+       border-bottom: none;  
+      } 
+      .nav-dropdown {
+        display: flex;
+        flex-direction: column;   
+        padding: 0 22px;
+      }
+      .nav-dropdown.open {
+        max-height: 300px;
+        padding: 12px 22px 18px;
+      }
+      .nav-dropdown.open .nav-link:nth-child(1) { transition-delay: 0.05s;
+       }
+      .nav-dropdown.open .nav-link:nth-child(2) { transition-delay: 0.10s; 
+      }
+      .nav-dropdown.open .nav-link:nth-child(3) { transition-delay: 0.15s;
+       }
+      .nav-dropdown.open .nav-link:nth-child(4) { transition-delay: 0.20s; 
+      }*/
+</script>
 </body>
 </html>
