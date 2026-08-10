@@ -29,6 +29,32 @@
      </nav>
       </div>
 
+      <!--DESKTOP HEADER-->
+      <nav class="navbar">
+          <div class="top-nav">
+            
+            <div class="top-img">
+            <img src="log2.png"  alt="" style=" width: 45px; height: auto; border-radius: 50%;">
+              <div class="top-par">
+                <p>Coil Africa</p>
+              </div>
+            </div>
+            
+        
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Solution</a></li>
+              <li><a href="#">Product</a></li>
+              <li><a href="#">Team</a></li>
+              <li><a href="#">FaQs</a></li>
+              <li><a href="#">Contacts</a></li>
+              <li><a href="#">Get App</a></li>
+              <li><a href="#" class="btn">Join Beta</a></li>
+            </ul>
+        
+          </div>
+    </nav>
+
       <!-- Mobile menu -->
       <header class="navbar-mobile">
           <div class="top-img">
@@ -84,41 +110,17 @@
           <div class="hero-input-container">
            
             <div class="input-container">
-              <input type="email" placeholder="Enter Your Email">
+              <input type="email" id="input" placeholder="Enter Your Email">
             </div>
             <div class="hero-button"> 
               <button class="butt">Join Waiting List</button>
             </div>
-          
-          </div>
+         </div>
+
       </div>
     </section>
-    <!--Header Design-->
-   <nav class="navbar">
-      <div class="top-nav">
-        
-        <div class="top-img">
-         <img src="log2.png"  alt="" style=" width: 45px; height: auto; border-radius: 50%;">
-          <div class="top-par">
-            <p>Coil Africa</p>
-          </div>
-        </div>
-        
-     
-        <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Solution</a></li>
-          <li><a href="#">Product</a></li>
-          <li><a href="#">Team</a></li>
-          <li><a href="#">FaQs</a></li>
-          <li><a href="#">Contacts</a></li>
-          <li><a href="#">Get App</a></li>
-          <li><a href="#" class="btn">Join Beta</a></li>
-        </ul>
-     
-      </div>
-
-   </nav>
+    
+   
    <!-- PHONE INPUT SECTION-->
     <section>
       <div class="section-2-container">
@@ -235,19 +237,47 @@
   </footer>
   </div>
 
-  <script>
- const menuBtn = document.getElementById("menuBtn");
-const mobileMenu = document.getElementById("mobileMenu");
+<script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
 
-menuBtn.addEventListener("click", () => {
-    mobileMenu.classList.toggle("active");
+    menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("active");
 
-    if (mobileMenu.classList.contains("active")) {
-        menuBtn.innerHTML = "✕";
-    } else {
-        menuBtn.innerHTML = "☰";
-    }
-});
-  </script>
+        if (mobileMenu.classList.contains("active")) {
+            menuBtn.innerHTML = "✕";
+        } else {
+            menuBtn.innerHTML = "☰";
+        }
+    });
+
+
+    // Select the navbar and the element that serves as the trigger point
+    const navbar = document.querySelector('.navbar');
+    const topImg = document.querySelector('.top-img');
+
+    // Configuration options for the observer
+    const observerOptions = {
+      root: null,         // Use the viewport as the container
+      rootMargin: '0px',  // Triggers exactly at the boundary of the element
+      threshold: 0        // Triggers as soon as even 1 pixel of the target changes visibility
+    };
+
+    // Create the observer instance
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        // If the hero section is NOT intersecting (meaning it has scrolled off-screen)
+        if (!entry.isIntersecting) {
+          navbar.classList.add('is-sticky');
+        } else {
+          // If the user scrolls back to the top and the hero becomes visible again
+          navbar.classList.remove('is-sticky');
+        }
+      });
+    }, observerOptions);
+
+    // Start watching the hero section
+    observer.observe(topImg);
+</script>
 </body>
 </html>
