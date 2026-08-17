@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=], initial-scale=1.0">
+  <title>FlipCard</title>
+</head>
+<style>
+  body{
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .box{
+    width: 100%;
+    height: 90vh;
+   
+    
+  }
+  .flip-card{
+    width: 280px;
+    height: 470px;
+    /* border: 1px solid blue; */
+    perspective: 1000px;
+    margin: 50px auto;
+  }
+  .flip-card-inner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  .flip-card:hover .flip-card-inner{
+    transform: rotateY(180deg);
+  }
+    /*Front View*/
+  .flip-front{
+    display: flex;
+    position: absolute;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border: none;
+    border-radius: 5px;
+    flex-direction: column;
+    background: black;
+    color: white;
+    opacity: 0.8;
+  }
+  .flip-front-1, img{
+    width: 150px;
+    height: 150px;
+    margin-top: 70px;
+    margin-bottom: 20px;
+  }
+  .flip-front-2{
+    width: 98%;
+    border: 1px dotted #fff; 
+    opacity: 0.2;
+    margin-top: 145px;
+    margin-bottom: 10px;
+    
+  }
+  .flip-front-3{
+   max-width: 100%;
+   margin-left: auto;
+   margin-right: 0;
+   box-sizing: border-box;
+   height: auto;
+   /* border: 2px solid white; */
+  }
+  .flip-front-3 h2, p{
+    margin: 5px 10px;
+  }
+  /*Back view*/
+  .flip-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 5px;
+    transform: rotateY(180deg);
+    background: black;
+    color: white;
+    opacity: 0.8;
+   
+  }
+  .flip-back-label{
+   padding: 20px;
+   text-align: center;
+   color: #fff;
+   opacity: 0.2;
+   font-size: 0.9rem;
+  }   
+  .flip-back-container{
+    position: relative;
+    display: flex;
+    padding: 20px 40px;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: 200px;
+  }
+    .flip-quote{
+      color: #fff;
+      display: inline-block;
+    }
+    .flip-quote.top{
+      position: absolute;
+      left: 1rem;
+      top: 4.5rem;
+      right: auto;
+      bottom: auto;
+      opacity: 0.2;
+      font-size: 4rem;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      line-height: 1em;
+
+    }
+    .flip-quote.btm{
+      position: absolute;
+      left: auto;
+       top: auto;
+      right: 1rem;
+      bottom: 4rem;
+      opacity: 0.2;
+      font-size: 4rem;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      line-height: 1em;
+    }
+    .flip-quote-p{
+      position: relative;
+      font-size: 1em;
+      z-index: 5;
+      font-style: italic;
+      text-align: center;
+      line-height: 1.4em;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .class-btn{
+      margin-top: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .class-btn2{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 10px;
+      border: 2px solid rgb(79, 174, 79);
+      width: 210px;
+      height: 30px;
+      padding: 5px 0;
+      border-radius: 30px;
+    }
+    .class-btn2 a{
+      text-decoration: none;
+      color: white;
+      font-size: 1.2rem;
+      line-height: 1.4em;
+    }
+    .class-btn2:hover{
+    background-color: rgb(79, 174, 79);
+    }
+</style>
+<body>
+  
+  <!--Creating a flipcard -->
+  <div class="box">
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-front">
+              <div class="flip-front-1">
+                <img src="Spotify.png" alt="">
+              </div>
+              <div class="flip-front-2"></div>
+              <div class="flip-front-3">
+                  <h2>Spotify</h2>
+                  <p>spotify.com/sketchzlap</p>
+              </div>
+            </div>
+            <div class="flip-back">
+                <div class="flip-back-label">
+                    <p>spotify.com/sketchzlap</p>
+                </div>
+                <div class="flip-back-container">
+                    <div class="flip-back-quote">
+                        <div class="flip-quote top">"</div>
+                        <div class="flip-quote btm">"</div>
+                        <p class="flip-quote-p">Start your music journey today with Spotify</p>
+                    </div>
+                </div>
+                <div class="class-btn">
+                    <div class="class-btn2"><a href="https://open.spotify.com/">Visit Now</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</body>
+</html>

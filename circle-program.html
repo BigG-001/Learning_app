@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .container{
+      display: flex;
+      width: 100%;
+      gap: 10px;
+    }
+    .box{
+      width: 100px;
+      height: 100px;
+      padding: 30px;
+      border: 10px solid blue;
+    }
+    .content-box{
+      box-sizing: content-box;
+      background: lightblue;
+    }
+    .border-box{
+      box-sizing: border-box;
+      background: lightgreen;
+    }
+    .triangle{
+      width: 0;
+      height: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-bottom:100px solid gray
+    }
+    .down{
+      width: 0;
+      height: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-top:100px solid gray
+    }
+    .left{
+      width: 0;
+      height: 0;
+      border-top: 50px solid transparent;
+      border-right:100px solid  gray;
+      border-bottom: 50px solid transparent;
+    }
+    .right{
+      width: 0;
+      height: 0;
+      border-top: 50px solid transparent;
+      border-left:100px solid  gray;
+      border-bottom: 50px solid transparent;
+    }
+  </style>
+ 
+ <div class="container">
+    <div class="box content-box">
+     
+    </div>
+
+    <div class="box border-box">
+     
+    </div>
+
+    <div class="triangle ">
+
+    </div> 
+    
+    <div class=" down">
+
+    </div>
+    
+    <div class="left">
+
+    </div>
+
+    <div class="right">
+
+    </div>
+ </div>
+
+  </div>
+</body>
+</html>
