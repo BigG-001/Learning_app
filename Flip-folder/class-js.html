@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p id="age">What is your age</p>
+
+
+  <script>
+    
+/*Remember typeof helps identify if a var is a number or string */
+
+   /*This lines tells us that age appear as a string not a number */
+// Ask user for their name with a default fallback
+let age = prompt("Please enter your age:");
+     age = Number(age);
+  
+
+console.log(age);
+console.log(typeof  age);
+
+if (typeof age === "number" && !isNaN(age)){
+  let voteAble;
+  if (age >= 18 ){
+    voteAble = true;
+  }else {
+    voteAble = false;
+  alert("Voters age is not up to 18");
+  } 
+  alert(voteAble);
+}else{
+  alert("voteable must be an input");
+}
+
+  </script>
+</body>
+</html>
