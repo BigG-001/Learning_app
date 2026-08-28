@@ -660,10 +660,78 @@ let me = 10;
       // Hoisting => Function declarations can be called before it's being defined.
       //N/B Function expression can not be hoist.
 
-      let multipli = multiplication(1, 4) 
-         console.log(multipli);
-       function multiplication(a, b){
-         return a * b;
-       } 
+      // let multipli = multiplication(1, 4) 
+      //    console.log(multipli);
+      //  function multiplication(a, b){
+      //    return a * b;
+      //  } 
       
-       // ES6 Syntax.
+       // ES6 Syntax. 
+       const multiplication = (a, b) =>  a * b;
+
+      //  function myOgaName() {
+      //   return "God'swill";
+      //  } 
+      //  console.log(myOgaName())
+        const myOgaName = (name) => "God'swill";
+        
+        // spread 
+        let cloth = ["Shoe, shirt, sunshade"];
+        const clothes = [...cloth, "Trouser, suit"];
+        console.log(clothes) 
+
+        //Spread operator is used to unpack elements of an iterable e.g arrays, objects, sets e.t.c
+       
+        //Rest operator is used to pack remaning of a function into an array 
+
+        function contract(x, y, c, v, ...z) {
+          console.log(x)
+          console.log(y)
+          console.log(z)
+          console.log(c)
+          console.log(v)
+        }
+        contract(1, 2, 2, 5, 6)
+        
+        //Write a function that takes a string and  reverses it
+        // for instance 
+        // it will take  “Matthew" and  change it to “wehttam"
+        function reverseHisName(name) {
+          return name.split("").reverse().join("")
+        }
+        console.log(reverseHisName("mathew"));
+
+        //Declare 2 arrays of countries, each should have 3 countries, use spread operator add 3 more countries to the second array
+        let country1 = ["Nigeria, Jamica, italy"];
+        let country2 = ["London, Ethopia, Germany"];
+
+        const OverallCoutry = [...country1, ...country2, "Russia Argentina Scottland"];
+        console.log(OverallCoutry);
+        console.log(country2);
+        console.log
+
+
+
+                    //                        AN ARRAY
+                    // An array is a variable that stores multiple values in one place
+                    
+                    let city = ["Uyo, Lagos, Abuja, Capetown"];
+
+                    let nums = [70, 60, 50, 20];
+
+                    let Boolean = [true, false];
+
+                    let myData = ["Godswill", 25, true];
+                    console.log(myData);
+
+    //                     ARRAY INDEX
+        let shoes = ["sandals", "slippers", "snickers", "pams"];
+        // Array index start counting from 0.
+        //  Index:     0        1         2         3
+        //  Value:   sandals    slippers     snickers   pams
+        console.log(shoes[0])
+        console.log(shoes[1])
+        console.log(shoes[2])
+        console.log(shoes[3])
+        
+       
