@@ -734,4 +734,6 @@ let me = 10;
         console.log(shoes[2])
         console.log(shoes[3])
         
-       
+        //       (2)               CHANGING ARRAY VALUE
+        shoes[1] = "Boot";
+        console.log(shoes);
