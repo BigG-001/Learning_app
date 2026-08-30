@@ -696,21 +696,20 @@ let me = 10;
         //Write a function that takes a string and  reverses it
         // for instance 
         // it will take  “Matthew" and  change it to “wehttam"
-        function reverseHisName(name) {
-          return name.split("").reverse().join("")
-        }
-        console.log(reverseHisName("mathew"));
+        
 
         //Declare 2 arrays of countries, each should have 3 countries, use spread operator add 3 more countries to the second array
         let country1 = ["Nigeria, Jamica, italy"];
         let country2 = ["London, Ethopia, Germany"];
 
-        const OverallCoutry = [...country1, ...country2, "Russia Argentina Scottland"];
+        const OverallCoutry = [ "Russia Argentina Scottland"];
         console.log(OverallCoutry);
         console.log(country2);
         console.log
 
-
+          const seal = [10, 20, 5.5, 20];
+          let doubled = seal.map((score) => score * 2);
+          console.log(doubled);
 
                     //                        AN ARRAY
                     // An array is a variable that stores multiple values in one place
