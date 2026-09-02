@@ -307,3 +307,16 @@ console.log(groomMen.endsWith("dima"));
 let creator = "Goodwill";
 console.log(creator.slice(0, 4))
 console.log(creator.slice(-4,));
+
+
+// RECALL
+//write a function that takes a “10-digit” account number and pads the first  6 digits, leaving only the last 4 digits
+ 
+const accountMaker = ((accountNumber) => "******" + accountNumber.slice(-4));
+console.log(accountMaker("0123456789"));
+
+const ogAcc = 1234567890;
+const ogAccBuild = ogAcc.toString().slice(-4);
+
+const finalAcc = ogAccBuild.padStart(10, "*");
+console.log(finalAcc)
