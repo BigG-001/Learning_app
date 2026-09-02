@@ -126,6 +126,19 @@ function printDouble(number){
   console.log(breadfast, array[index +1]); // 
  });
 
+// Adding for Each() with object 
+let users = [
+  {name: "Godswill", age: 22},
+  {name: "Victor", age: 18},
+  {name: "Emeka", age: 20},
+  {name: "Jasper", age: 21}
+]
+users.forEach((user) =>  {console.log(user.name)})
+
+users.forEach((user) => {
+  console.log(`${user.name} is ${user.age} years old`);
+})
+
  //       FILTER ARRAY
  // CREATES  a new array by selecting out elements
  let ogNums = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -183,3 +196,114 @@ console.log(longWords)
 
  const found = inventory.find((fruit) => fruit.name ==="banana");
  console.log(found);
+
+
+ //  INTRODUCTION TO OBJECT
+ // A object is a varable that store both data value and function together.
+ // Is a collection of related properties and/method.
+ // methods are function that belongs to an object
+ // Object can represent real world object (people, products, places )
+ //object properties are key-value pairs that define the characteristics of an object. <= noted
+ const person = {
+  name: "Victor",
+  age: 22,
+  gender: "Male",
+  country: "Nigeria",
+  sayHello: function(){console.log("Hello, Nice to have you here")}, 
+  eat: () => {console.log("I am eating jellof rice with chicken")},
+ }
+ console.log(person.age);
+ console.log(person);
+person.sayHello()
+person.eat()
+
+// if(person.age >= 22){
+//   console.log("Young Adult")
+// }
+
+person.age < 22 ? console.log("Young Adult") : console.log("You are not up to 22years")
+  
+
+ // Dot Notation
+ console.log(person.gender);
+ 
+
+//      Nested Object
+// A nested object is an object that contains another objects as a property
+
+const person2 = {
+  fullName: "Godswill Udofia",
+  age: 22,
+  isStudent: true,
+  hobbies: ["Table tennis", "Chess", "Workout"],
+  address: {
+    country: "Nigeria",
+    state: "Akwa ibom",
+    street: "No. 85 Ephraim Essien GRA"
+  }
+} 
+const tarketKey = "country";
+console.log(person2.address["country"])
+
+console.log(person2.hobbies[1]);
+console.log(person2.address);
+
+// write a function that takes a 
+// “10-digit” account number and
+//  pads the first  6 digits, 
+// leaving only the last 4 digits
+
+// Object and Array destructuring
+
+const {fullName:name, age:userAge, isStudent:obj3} = person2;
+console.log(obj3)
+const [first, second, third] = mynum;
+console.log(first) 
+
+const {address: {state}} = person2;
+console.log(state);
+
+const {fullName, ...connect} = person2;
+console.log(fullName);
+console.log(connect);
+
+const ogTech = ["Java", "C++", "Php", "Javascript"];
+// array is index and value
+// for ..in 
+for (const index in ogTech){
+  console.log(index);
+}
+
+// for ...of
+for (const tech of ogTech){
+  console.log(tech)
+};
+//for .. in
+// object key value pairs
+for (const person in  person2 ){
+  console.log(person)
+}
+// for ..of is not a best practice for value
+// for (person of person2){
+//   console.log(person)
+// }
+// Research on how to log a value of an object
+
+// String fuunction/ methods
+// trim() => trim() removes spacing from the begining and the end of a string
+const asoebi = "  Longwrapper  ";
+console.log(asoebi);
+console.log(asoebi.trim()); // usefull when working with forms
+// includes() => checks if a variable contains a selected string; if icluded, returns true, not included, it returns false.
+const groomMen = "Adam, Mathew, Chidima";
+console.log(groomMen.includes("Chidima"));
+// startWith() => checks if a string start with
+console.log(groomMen.startsWith("Ada"))
+// endsWith() => checks if a string ends with
+console.log(groomMen.endsWith("dima"));
+
+// slice()
+//Extract or removes part of a string
+let creator = "Goodwill";
+console.log(creator.slice(0, 4))
+console.log(creator.slice(-4,));
