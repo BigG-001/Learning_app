@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    #moveBtn{
+      padding: 20px;
+      color: black;
+      background-color: red;
+      margin: 50px;
+    }
+    body{
+      position: relative;
+    }
+    #circle{
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      position: absolute;
+      background-color: yellowgreen;
+      left: 0;
+      top: 200px;
+      /* display: none; */
+     
+    }
+    .moveCircle{
+      display: block;
+      animation: moveAndSpin 3s linear forwards;
+    }
+    @keyframes moveAndSpin{
+      from{
+        left: 0;
+        transform: rotate(0deg);
+      }
+      to{
+        left: calc(100% - 60px);
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+ 
+
+  <h2 id="title">Hello World</h2>
+
+  <main>
+    <input type="text" id="name" placeholder="Enter Your Name"> <br>
+     <input type="password" name="" id="password" placeholder="Enter password">
+    <button onclick="greetUser()">Click me</button>
+    <p id="message"></p>
+  </main>
+
+  <button id="button1">Mouse over me</button>
+  <button id="button2">click me</button>
+
+  <button id="moveBtn">Click Me</button>
+  <div id="circle"></div>
+  <script>
+      // The DOM (Document Object Model) is a programming interface that translates a web page's HTML structure into a tree  of objects that JavaScript can understand and manipulate.
+
+      // DOM is a tree like structure created by browser for every Html page
+      // Js can use DOM to read, change and delete element on the page  
+
+    const title = document.getElementById("title");
+    title.textContent  = "Hello Godswill";
+    title.style.color = "#ffff";
+    title.style.background = "black";
+    title.style.textAlign = "center";
+
+   function greetUser(){
+    let name = document.getElementById("name").value;
+    let password = document.getElementById("password").value;
+    let outPut = document.getElementById("message");
+    outPut.style.color = "blue";
+
+    outPut.innerText = (`Hello ${name} Your Password is ${password} Welcome To Javascript`);
+   }
+   
+   
+    let overBtn = document.getElementById("button1");
+
+    let clickBtn = document.getElementById("button2");
+    
+    overBtn.addEventListener("mouseover", 
+    function over(){
+      document.body.style.backgroundColor = "black";
+    });
+
+    clickBtn.addEventListener("click", 
+    function() {
+      document.body.style.backgroundColor = "blue";
+    });
+   
+    // third user: Move a circle from left to right
+    let moveBtn = document.getElementById("moveBtn");
+    let circle = document.getElementById("circle");
+
+    moveBtn.addEventListener("click", () => {
+      circle.classList.remove("moveCircle");
+
+      void circle.offsetWidth;
+      
+      circle.classList.add("moveCircle");
+    });
+  </script>
+</body>
+</html>

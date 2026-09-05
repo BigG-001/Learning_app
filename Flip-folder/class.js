@@ -736,3 +736,11 @@ let me = 10;
         //       (2)               CHANGING ARRAY VALUE
         shoes[1] = "Boot";
         console.log(shoes);
+
+        // generate a * dotted account number
+        const ogNum = 1234567898;
+
+        const newOgNum = ogNum.toString().slice(0, 6); 
+
+        const finalNum = newOgNum.padEnd(10, "*");
+        console.log(finalNum);
