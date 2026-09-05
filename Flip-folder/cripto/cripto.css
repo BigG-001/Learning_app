@@ -1,0 +1,170 @@
+:root{
+  --bg-primary:#0a0a0f;
+  --bg-text:#fff;
+  --medium-text: #a1a1aa;
+  --small-text: #71717a;
+  --purple:#9702fa;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg-primary);
+  color: var(--bg-text);
+  
+}
+.parent{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 30px 0;
+  align-items: center;
+}
+.uncles{
+  width: 23.5rem;
+  height: 18.625rem;
+  border-radius: 10px;
+  background: #1b1b24;
+ border: 1px solid rgba(30, 30, 30, 0.14);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08); 
+}
+.uncles-mate{
+  width: 98%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 0;
+  
+ 
+}
+.child-logo{
+  width: 133px;
+  height: 133px;
+  border: 1px solid rgba(228, 236, 241, 0.3) ;
+}
+ /* third div with no title */
+ .child-s-logo{
+  width: 65%;
+  height: 60%;
+  border: 1px solid rgba(228, 236, 241, 0.3) ;
+  
+ }
+.child-text{
+  text-align: center;
+  margin: 10px 15px 0 15px;
+  height: 70px;
+}
+.child-text p{
+  margin-top: 10px;
+  color: var(--medium-text);
+  font-size: 0.9rem;
+}
+.child-icon{
+  width: 50px;
+  height: 35px;
+  border-radius: 50px;
+  background-color: white;
+  
+}
+    /* Hero section */
+.hero-section{
+  width: 97%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero-h3{
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+.hero-h3 span{
+  color:var(--purple);
+}
+.aunty{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 70px;
+}
+.hero-par{
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: var(--medium-text);
+}
+.hero-par-2{
+  color:var(--small-text);
+}
+.aunty-firstborn{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 30px 0;
+}
+.aunty-children{
+  width: 15rem;
+  height: 5rem;
+  color: var(--medium-text);
+  background-color: #1b1b24;
+  border: 1px solid rgba(228, 236, 241, 0.3) ;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.uncle-children{
+  width: 85%;
+  height: 2.5rem;
+  border-radius: 5px;
+  margin-top: 10px;
+  border: 1px solid rgba(228, 236, 241, 0.3) ;
+}
+.uncle-children p{
+  color: var(--small-text);
+  padding: 10px 0 0 15px;
+}
+.uncle-container{
+  display: flex;
+}
+.uncle-cousin{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+   align-items: center; 
+}
+@media(max-width: 768px){
+  .parent{
+    flex-direction: column;
+  }
+  .uncles{
+    margin-top: 30px;
+  }
+  .aunty{
+    margin: 0 15px;
+  }
+  .hero-h3{
+    font-size: 1.1rem;
+    margin-left: 5px;
+  }
+  .hero-par{
+    font-size: 0.99rem;
+  }
+  .hero-par-2{
+    font-size: 0.89rem;
+  }
+  .aunty-children{
+    width: 11rem;
+    height: 3rem;
+    margin-left: 10px;
+    border-radius: 5px;
+  }
+  .aunty-children p{
+    font-size: 0.99rem;
+  }
+  .uncle-container{
+    flex-direction: column;
+  }
+}
