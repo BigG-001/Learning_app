@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    .parent{
+      width: 100%;
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .calculator{
+      width: 300px;
+      height: 450px;
+      border-radius: 15px;
+      background-color: black;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    .calculator input{
+      width: 80%;
+      margin: 20px 25px;
+      height: 80px;
+      background-color: #ecebeb;
+      font-size: 30px;
+      border-radius: 10px;
+      border: 1px solid rgba(30, 30, 30, 0.14);
+      /* box-shadow: 0 1px 3px rgba(0,0,0,0.08);  */
+    }
+    .bottons{
+      width: 80%;
+      background-color: rgba(184, 19, 19, 0.14);
+      border: 1px solid rgba(30, 30, 30, 0.14);
+      margin: 0 28px;
+      height: 310px;
+    }
+    button{
+      width: 50px;
+      height: 50px;
+      margin-left: 5px;
+      margin-bottom: 6px;
+      margin-top: 6px;
+      background-color: white;
+      border: none;
+      border-radius: 50%;
+      color:blue;
+      font-size: 18px;
+    }
+    .operator{
+      background-color: rgb(255, 183, 0);
+    }
+    .clear{
+      background-color: rgb(81, 255, 0);
+    }
+  </style>
+</head>
+<body>
+  <div class="parent">
+    <div class="calculator">
+        <input type="text" id="display" disabled>
+        <div class="bottons">
+              
+                  <button onclick="press('7')">7</button>
+                  <button onclick="press('8')">8</button>
+                  <button onclick="press('9')">9</button>
+                  <button class="operator" onclick="press('/')">/</button>
+              
+                  <button onclick="press('4')">4</button>
+                  <button onclick="press('5')">5</button>
+                  <button onclick="press('6')">6</button>
+                  <button class="operator" onclick="press('*')">*</button>
+             
+                  <button onclick="press('1')">1</button>
+                  <button onclick="press('2')">2</button>
+                  <button onclick="press('3')">3</button>
+                  <button class="operator" onclick="press('-')">-</button>
+              
+                  
+                  <button onclick="press('0')">0</button>
+                  <button class="operator" onclick="press('.')">.</button>
+                  <button class="operator" onclick="calculate()">=</button>
+                  <button class="operator" onclick="press('+')">+</button> 
+              
+          <button class="clear" onclick="ClearDisplay()">C</button>
+      </div>
+    </div>
+  </div>
+<script>
+  let display =document.getElementById('display')
+
+  function press(value){
+     display.value += value;
+    
+  }
+  // calculate being the parameter
+  // try -> says if the calculation works, proceed with the result (everything is fine).
+  // catch -> if something gets wrong e.g (if you enter an invalid number,) js will jumb to catch abd proceed qith the result "Math Error"
+  function calculate(){
+   try{   
+    display.value =eval(display.value);
+   } 
+   catch(error){
+    display.value="Math error";
+   }
+   
+  }
+
+  function ClearDisplay(){
+    display.value= '';
+  }
+</script>
+
+</body>
+
+</html>
+</body>
+</html>
