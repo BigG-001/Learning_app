@@ -50,13 +50,15 @@ font-size: 20px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
+   z-index: 100;
 }
 .hand i{
   position: absolute;
   width: 4px;
-  height: 70px;
+  height: 60px;
   border-radius: 8px;
   background-color: var(--clr);
+  
 }
 .par{
   position: absolute;
@@ -64,4 +66,5 @@ font-size: 20px;
   left: 100px;
   font-size: 0.8rem;
   font-family: sans-serif;
+  color: #c5c5c5;
 }
