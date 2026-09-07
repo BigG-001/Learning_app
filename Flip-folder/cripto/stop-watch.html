@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stop Watch</title>
+  <link rel="stylesheet" href="stop-watch.css">
+</head>
+<body>
+   <h1 id="myh1">Stop Watch</h1>
+    <div class="container">
+        <div id="display">
+          00:00:00
+        </div>
+        <div class="controls">
+           <button id="startBtn" onclick="start()">Start</button>
+           <button id="stopBtn" onclick="stop()">Stop</button>
+           <button id="resetBtn" onclick="update()">Reset</button>
+        </div>
+    </div>
+
+    <script>
+
+      let display = document.getElementById("display");
+
+
+      let timer = null;
+      let startTime = 0;
+      let elapsTime = 0;
+      let isRunning = false;
+
+      function start(){
+        
+       if(!isRunning){
+        startTime = Date.now() - elapsTime;
+        timer = setInterval(update, 10);
+        isRunning = true;
+      }
+    }
+
+    function stop(){
+
+    }
+    function update(){
+      const currentTime = Date.now();
+      
+      elapsTime = currentTime - startTime;
+      
+      let hour = Math.floor(elapsTime / (1000 * 60 * 60));
+      let minutes = Math.floor(elapsTime / (1000 * 60) % 60);
+      let seconds = Math.floor( elapsTime / (1000 % 60));
+      let mileseconds = Math.floor(elapsTime % 1000 / 10);
+
+      hour = string(hour).padStart(2, "0");
+      minutes = string(minutes).padStart(2, "0");
+      seconds = string(seconds).padStart(2, "0");
+      mileseconds = string(mileseconds).padStart(2, "0");
+
+
+      display.textContent = `${hour}:${minutes}:${seconds}:${mileseconds}`;
+    }
+  console.log(Date.now());
+    </script>
+</body>
+</html>
