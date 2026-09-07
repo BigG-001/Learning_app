@@ -15,7 +15,7 @@
         <div class="controls">
            <button id="startBtn" onclick="start()">Start</button>
            <button id="stopBtn" onclick="stop()">Stop</button>
-           <button id="resetBtn" onclick="reset()">Reset</button>
+           <button id="resetBtn" onclick="update()">Reset</button>
         </div>
     </div>
 
@@ -31,8 +31,35 @@
 
       function start(){
         
+       if(!isRunning){
+        startTime = Date.now() - elapsTime;
+        timer = setInterval(update, 10);
+        isRunning = true;
       }
+    }
 
+    function stop(){
+
+    }
+    function update(){
+      const currentTime = Date.now();
+      
+      elapsTime = currentTime - startTime;
+      
+      let hour = Math.floor(elapsTime / (1000 * 60 * 60));
+      let minutes = Math.floor(elapsTime / (1000 * 60) % 60);
+      let seconds = Math.floor( elapsTime / (1000 % 60));
+      let mileseconds = Math.floor(elapsTime % 1000 / 10);
+
+      hour = string(hour).padStart(2, "0");
+      minutes = string(minutes).padStart(2, "0");
+      seconds = string(seconds).padStart(2, "0");
+      mileseconds = string(mileseconds).padStart(2, "0");
+
+
+      display.textContent = `${hour}:${minutes}:${seconds}:${mileseconds}`;
+    }
+  console.log(Date.now());
     </script>
 </body>
 </html>
