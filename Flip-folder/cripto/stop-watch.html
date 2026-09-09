@@ -39,22 +39,28 @@
     }
 
     function stop(){
+      // if(isRunning){
+      //   clearInterval(timer);
+      //   elapsTime = Date.now() - startTime;
+      //   isRunning = false;
 
+      // }
     }
     function update(){
       const currentTime = Date.now();
       
       elapsTime = currentTime - startTime;
       
-      let hour = Math.floor(elapsTime / (1000 * 60 * 60));
+       let hour = Math.floor(elapsTime / (1000 * 60 * 60));
       let minutes = Math.floor(elapsTime / (1000 * 60) % 60);
       let seconds = Math.floor( elapsTime / (1000 % 60));
       let mileseconds = Math.floor(elapsTime % 1000 / 10);
 
-      hour = string(hour).padStart(2, "0");
-      minutes = string(minutes).padStart(2, "0");
-      seconds = string(seconds).padStart(2, "0");
-      mileseconds = string(mileseconds).padStart(2, "0");
+      // hour = string(hour).padStart(2, "0");
+      // minutes = string(minutes).padStart(2, "0");
+      // seconds = string(seconds).padStart(2, "0");
+      // mileseconds = string(mileseconds).padStart(2, "0");
+
 
 
       display.textContent = `${hour}:${minutes}:${seconds}:${mileseconds}`;

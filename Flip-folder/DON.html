@@ -98,7 +98,19 @@
     function() {
       document.body.style.backgroundColor = "blue";
     });
-   
+    
+    document.addEventListener("keydown", (event) => {
+        if (event.key.toLowerCase() === "b"){
+          document.body.style.backgroundColor = "green";
+        }
+      
+    });
+    document.addEventListener("keyup", (event) =>{
+      if (event.key.toLowerCase() === "b"){
+        document.body.style.backgroundColor = "yellow";
+      }
+    });
+
     // third user: Move a circle from left to right
     let moveBtn = document.getElementById("moveBtn");
     let circle = document.getElementById("circle");

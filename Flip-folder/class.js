@@ -744,3 +744,22 @@ let me = 10;
 
         const finalNum = newOgNum.padEnd(10, "*");
         console.log(finalNum);
+        
+// Mathew Tech: write a function that check for a palindrome and 
+// returns a message true or false based on the result
+//  Mathew Tech: Palindrome is a word that is spelt the 
+// same backwards  and forward, e.g. TUNDE EDNUT
+
+function checkPalindrome(name){
+ let stripped = name.toLowerCase().replaceAll(" ", "");
+ console.log(stripped)
+  let reversed = stripped.split("").reverse().join("");
+
+   return stripped === reversed;
+//    if(name === reversed){
+//      return true;
+//    }else{
+//      return false;
+//    }
+ }
+console.log(checkPalindrome("Tunde ednut"));
