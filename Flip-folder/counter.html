@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>counter</title>
+</head>
+<style>
+  .parent2{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding: 20px auto;
+   width: 200px;
+    border: 2px solid blue;
+    margin-top: 40px;
+  }
+  .chirld{
+  display:flex;
+  flex-direction: column;
+  align-items: first baseline;
+  border:2px solid green;
+
+  }
+</style>
+<body>
+  <div class="parent">
+    <button id="increment">increment</button>
+    <div id="count" class="cont">0</div>
+    <button id="decrement">decrement</button>
+    <br>
+    
+    <!-- Assignment : Create a character counter ,
+      that  takes input in a *textArea and returns 
+      the character count, then extend it to a word
+       counter application -->
+
+       <!-- First of all create a textarea and give it an id. so that javascript will work on it -->
+       <div class="parent2">
+            <textarea id="textInput"></textarea>
+            <div class="chirld">
+              <p>Character: <span id="charCount">0</span></p>
+              <p>Word: <span id="wordCount">0</span></p>
+            </div>
+       </div>
+    <script>
+      let count = 0;
+
+      const countDisplay = document.getElementById("count");
+      const incrementBtn = document.getElementById("increment");
+      const decrementBtn = document.getElementById("decrement");
+
+      incrementBtn.addEventListener("click", () => {
+        count++;
+        countDisplay.textContent = count;
+      });
+      decrementBtn.addEventListener("click", () => {
+        count--;
+        countDisplay.textContent = count;
+      });
+
+      const textInput = document.getElementById("textInput");
+      const charCount = document.getElementById("charCount");
+      const wordCount = document.getElementById("wordCount");
+
+      textInput.addEventListener("input", () => {
+        charCount.textContent = textInput.value.length;
+
+        let text = textInput.value.trim();
+        if(text === ""){
+          wordCount.textContent = 0;
+        }else{
+          wordCount.textContent = text.split(/\s+/).length;
+        }
+      })
+    </script>
+  </div>
+</body>
+</html>
+<!-- Create a simple counter , 2 buttons and a div that shows the current count,  the buttons should be. increment and decrement. 
+
+Once a button is clicked,  take the necessary action that the button is supposed to perform. 
+
+
+The counter starts at 0 -->
