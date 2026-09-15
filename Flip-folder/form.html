@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>form </title>
+ <style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+    background: black;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .parent{
+    margin: 40px auto;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    background-color: blueviolet;
+  }
+ </style>
+</head>
+<body>
+  <div class="parent">
+      <form action="" id="myForm">
+          <input type="text" id="userName" placeholder="Enter Name">
+          <p id="output"></p>
+          <p id="countryResult"></p>
+          <select name="" id="country">  
+            <option value="">Select Country</option>
+            <option value="nigeria">Nigeria</option>
+            <option value="algeria">Algeria</option>
+            <option value="gambia">Gambia</option>
+          </select>
+
+          <button type="submit">Submit</button>
+
+      </form>
+  </div>
+
+  <script>
+    let userName = document.getElementById("userName");
+    let output = document.getElementById("output");
+    let country = document.getElementById("country");
+    let countryResult = document.getElementById("countryResult");
+    let myForm = document.getElementById("myForm")
+
+    userName.addEventListener("input", () => {
+      output.textContent = userName.value;
+    });
+
+    country.addEventListener("change", () => {
+      countryResult.textContent = country.value;
+    });
+    
+    myForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+       alert(` Name: ${userName.value} Country: ${country.value}`);
+      // alert( userName.value);
+    })
+
+    // const formObject = {
+    // name: userName.value,
+    // country: country.value 
+    // }
+    // alert(formObject);
+  </script>
+</body>
+</html>
