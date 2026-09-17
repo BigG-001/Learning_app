@@ -16,3 +16,10 @@ if (age1 <= 18){
   console.log("not qualified to vote")
 }
 // == === <== < > >== !==
+let man = "Godswill";
+// if(man === "Godswill"){
+//   console.log("true");
+// }else{
+//   console.log("false")
+// }
+man === "Godswill" ? console.log(true) : console.log(false)
