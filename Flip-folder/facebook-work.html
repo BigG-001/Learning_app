@@ -126,8 +126,8 @@
 <body>
   <div class="container">
       <div class="item">
-          <h2>facebook</h2>
-          <p>Facebook help you connect and
+          <h2>chatbook</h2>
+          <p>Chatbook help you connect and
             share with the people in your life</p>
       </div>
       <div class="item1">
@@ -174,7 +174,7 @@
     let gender = document.querySelector('input[name="gender"]:checked');
     
 
-    message.style.color ="gray";
+    message.style.color ="red";
     message.style.fontFamily = "italic"
     
     formLogin.addEventListener("submit", function(event) {
@@ -195,13 +195,13 @@
       //   return;
       // }
       if(!emailpattern.test(emailValue)){
-        message.textContent = "Invalid email address";
+        message.textContent = "Please enter a email address.";
         return;
       }
       
       // Create a strong password 8 characters and above
       if(passwordValue.length < 8){
-        message.textContent = "Password must me atleast 8 characters";
+        message.textContent = "Please choose a more secure password. It should be longer than 6 characters";
         return;
       }
       // password validation
