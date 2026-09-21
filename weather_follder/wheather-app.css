@@ -1,0 +1,126 @@
+/* Remove default spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Page */
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: #212121;
+}
+
+/* Main weather app */
+.weather-app {
+  width: 100%;
+  max-width: 450px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading */
+.weather-app h1 {
+  margin-bottom: 25px;
+  color: white;
+  font-size: 2rem;
+}
+.search-box{
+  display: flex;
+  gap: 10px;
+}
+
+/* Input */
+#cityInput {
+  flex: 1;
+  /* width: 100%; */
+  padding: 14px 16px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  /* margin-bottom: 12px; */
+}
+
+/* Input placeholder */
+#cityInput::placeholder {
+  color: #888;
+}
+
+/* Search button */
+#searchBtn {
+  /* width: 100%; */
+  padding: 14px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #111;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#searchBtn:hover {
+  transform: translateY(-2px);
+  background: #222;
+}
+
+#searchBtn:active {
+  transform: translateY(0);
+}
+
+/* Weather result */
+#weatherResult {
+  margin-top: 25px;
+  padding: 25px;
+  color: white;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.12);
+}
+.weather-city{
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.temperature{
+  font-size: 3rem;
+  font-weight: 600;
+  margin: 10px 0;
+}
+.weather-info{
+  font-size: 1.125rem;
+  margin-bottom: 8px;
+}
+.error{
+  font-weight: 600;
+  color: #ffdddd;
+}
+/* Mobile */
+@media (max-width: 480px) {
+
+  .weather-app {
+    padding: 22px;
+  }
+  .search-box{
+    flex-direction: column;
+  }
+  #searchBtn{
+    width: 100%;
+  }
+}
