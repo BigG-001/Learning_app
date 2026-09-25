@@ -7,37 +7,53 @@
 </head>
 <body>
   
-<!--In the form below, add an input field with the type "button" and the value "OK".-->
-<form> 
-<input type="button" value="OK">
-<!--In the form below, add two radio buttons, both with the name "fav_language".-->
+    <!--In the form below, add an input field with the type "button" and the value "OK".-->
+    <form id="signupForm">
+        <input type="text" id="name" placeholder="Enter your name"> <br> 
+        <input type="email" id="email" placeholder="Enter email address"> <br>
+        <input type="password" id="password" placeholder="Password"> <br> 
+        <button type="submit">SignUp</button>
+          <div id="result"></div>
+    </form>
 
+    <script>
+      const form = document.getElementById("signupForm");
 
-	<input type="radio" name="fav_language" value="html"> 
-	<input type="radio" name="fav_language" value="css"> CSS
-</form>
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+      
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value.trim();
+        
 
-</body>
-</html>
+      // to send a data to a local storage, we first have to create an object that will take in tha data.
+      // But local storage takes in data as string , so we will do it in two steps. 
+      // step (1) we create an object
+        const user = {
+          name: name,
+          email: email,
+          password: password
+        };
+        //step (2) convert object to JSON
+        const userData = JSON.stringify(user);// This convert that object into string
+        // save to localStorage
+        localStorage.setItem("user", userData);// this means save userData to local storage using "user" as it's key 
+        alert("Data saved successfully");
+         
+        let dataSaved = localStorage.getItem("user")
+        //console.log(dataSaved);
+          if(dataSaved){
+            let user = JSON.parse(userData); // convert it back to object
+            document.getElementById("result").innerHTML = ` 
+            <p>Name: ${user.name}</p>
+            <p>Email: ${user.email}</p>
+            <p>Password: ${user.password}</p>
+            `;
+          }
+          
+        })
 
-
-
-<!DOCTYPE html>
-<html>
-<body>
-
-<h1>Registration</h1>
-
-<!-- Add a form here -->
-  <!--Add a <form> element
-Add a <label> with the text First name: and for="fname"
-Add a text <input> with id="fname" and name="fname"
-Add a submit button using <input type="submit" value="Submit">
--->
-<form>
-  <label for="fname">First name</label>
-  <input type="text" id="fname" name="fname">
-  <input type="submit" value="Submit">
-</form>
+    </script>
 </body>
 </html>

@@ -1,14 +1,7 @@
 // Execution Context
 // two execution context
 // 1 creation 2 execution
-const number = 10;
 
-function timesTen(event){
-  return event * 10;
-}
-let y = timesTen(10);
-console.log(y);
-console.log(global)
 
 // Create the global object i.e., window in the web browser or global in Node.js.
 // Create the this object and bind it to the global object.
@@ -35,14 +28,31 @@ console.log(global)
 
 // When the current function completes, the JavaScript engine pops it off the call stack and resumes the execution where it left off.
 
-function twoValue(a, b){
-  return a + b;
-}
+// function twoValue(a, b){
+//   return a + b;
+// }
 
-function average(a, b){
-  return add(a,b)/2;
+// function average(a, b){
+//   return add(a,b)/2;
+// }
+// function add(a, b) {
+//     return a + b;
+// }
+// let sum = console.log(average(10, 15));
+
+// let x = 10;
+// function tenTimes(a){
+//   return a * 10;
+// }
+// let y = tenTimes(x);
+// console.log(y)
+
+let name = "Godswill"
+greet() 
+function greet(){
+  console.log("Hello" + name)
 }
-function add(a, b) {
-    return a + b;
-}
-let sum = console.log(average(10, 15));
+   // (this === window) = true
+
+// "Godswill"
+// greeet function
