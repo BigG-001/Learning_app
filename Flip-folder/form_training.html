@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation</title>
+</head>
+<body>
+  
+  <div class="container">
+    <h1>Form Validation</h1>
+    <form id="signUpForm" action="">
+      <input type="email" name="" id="email" placeholder="Enter Your Email">
+      <input type="password" name="" id="password" placeholder="Enter Your Password">
+      <button type="submit">Submit</button>
+      <p id="message"></p>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("signUpForm");
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+    const message = document.getElementById("message");
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        emailValue = email.value.trim();
+        passwordValue = password.value.trim();
+
+        if(emailValue === "" || passwordValue === ""){
+          message.textContent = "Please fill in all filled"
+          return;
+        }
+        emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if(!emailPattern.test(emailValue)){
+          message.textContent = "Please fill in a Valid email";
+          return;
+        }
+        if(passwordValue.length < 8){
+          message.textContent = "Password must me atleast 8 characters";
+          return;
+        }
+        if(!/[A-Z]/.test(passwordValue) && !/[0-9]/.test(passwordValue)){
+          message.textContent = "Password must include atleast one Capital Letter and one Number";
+          return;
+        }
+        alert("form created successfully");
+    })
+  </script>
+</body>
+</html>
