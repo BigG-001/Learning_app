@@ -63,7 +63,7 @@
   line-height: 65px;
 }
 .son span{
-  color:var(--button-blue);
+  color:var(--light-blue);
 }
 .daughter{
   position: absolute;
